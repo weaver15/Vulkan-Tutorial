@@ -1,9 +1,13 @@
-#include <iostream>
-#include <vulkan\vulkan.h>
+#include "BUILD_ORDER.h"
+
+VulkanInstance* instance;
+
 int main()
 {
-
-	std::cout << "working" << std::endl;
-
+	VulkanConfiguration vulkan_config;
+	vulkan_config.application_name = "Vulkan App";
+	vulkan_config.application_version = VK_MAKE_VERSION(1, 0, 0);
+	instance = new VulkanInstance(vulkan_config);
+	delete instance;
 	return 0;
 }
